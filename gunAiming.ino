@@ -284,7 +284,7 @@ void loop() {
 
 // Going Forward (KEY: W)
     if(incomingChar == 'W'|| incomingChar == 'w') {
-     
+    
       moveWheel();
       delay(15);
       rotateGun(20);
@@ -352,25 +352,16 @@ void loop() {
 
 // Engage Feature (KEY: E)
     if (incomingChar =='E' || incomingChar == 'e') {
-      if (range < firing_range) {
+      if (distance < firing_range) {
       if (mag_capacity > 0) {
       stopWheel();
-      aimGun(range);
-      shootGun();
+      aimGun(distance);
+      engageGun();
     }
-       
-    else {
-      //print 'RELOAD THE GUN' on the OLED screen
-    }
-    }
-    else {
-      //print 'NO TARGET DETECTED' on the OLED screen
-    }
+      
     delay(200);
     } 
     }
     delay(1000);
   }
 }
-}
-
